@@ -1,17 +1,103 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <title>YpNext FrontEnd Test - Greenthumb</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./index.scss" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body>
-    <img src="images/icons/logo-white.svg" alt="Greenthumb" />
+    <!--Home-->
+    <section id="home">
+      <div class="container">
+        <img src="assets/icons/logo-white.svg" class="logo" alt="Greenthumb" />
+        <h1>Find your next green friend</h1>
+        <img src="./assets/icons/arrow-down.svg" alt="Arrow Down" />
+      </div>
+    </section>
+
+    <!--Select fields-->
+    <section id="fields">
+      <div class="container d-flex">
+        <!--sunlight field-->
+        <div class="item">
+          <div class="icon d-flex">
+            <img src="./assets/illustrations/sun.png" alt="Sun picture">
+          </div>
+          <div class="label">
+            <p><strong>1.</strong> Set the amount of <strong>sunlight</strong> your plant will get.</p>
+          </div>
+          <div class="select-field">
+            <select name="sunlight" id="sunlight">
+              <option value="null">Select...</option>
+              <option value="no">No</option>
+              <option value="low">Low</option>
+              <option value="high">High</option>
+            </select>
+            <img src="./assets/icons/drop_down.png" alt="Drop Down icon" class="drop-icon">
+          </div>
+        </div>
+
+        <!--water field-->
+        <div class="item">
+          <div class="icon d-flex">
+            <img src="./assets/illustrations/wateringcan.png" alt="Sun picture">
+          </div>
+          <div class="label">
+            <p><strong>2.</strong> How often do you want to <strong>water</strong> your plant?</p>
+          </div>
+          <div class="select-field">
+            <select name="water" id="water">
+              <option value="null">Select...</option>
+              <option value="regularly">Regularly</option>
+              <option value="daily">Daily</option>
+              <option value="rarely">Rarely</option>
+            </select>
+            <img src="./assets/icons/drop_down.png" alt="Drop Down icon" class="drop-icon">
+          </div>
+        </div>
+
+        <!--chew plants field-->
+        <div class="item">
+          <div class="icon d-flex">
+            <img src="./assets/illustrations/dog.png" alt="Sun picture">
+          </div>
+          <div class="label">
+            <p><strong>3.</strong> Do you have pets? Do they <strong>chew</strong> plants?</p>
+          </div>
+          <div class="select-field">
+            <select name="toxicity" id="toxicity">
+              <option value="null">Select...</option>
+              <option value="false">Yes</option>
+              <option value="true">No</option>
+            </select>
+            <img src="./assets/icons/drop_down.png" alt="Drop Down icon" class="drop-icon">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Plants cards-->
+    <section id="find-results">
+      <div class="container">
+        <img src="./assets/illustrations/pick.png" alt="Pick" class="pick" />
+        <h2>Our picks for you</h2>
+        <div class="d-flex cards-container"></div>
+      </div>
+    </section>
+
+    <!--No results-->
+    <section id="no-results" class="hide">
+      <div class="container">
+        <div class="message">
+          <h3>No results yet…</h3>
+          <p>Use the filters above to find the plant that best fits your environment :)</p>
+        </div>
+        <img src="./assets/illustrations/no-results.png" alt="No results" />
+      </div>
+    </section>
+
+    <script src="./js/script.js" type="module"></script>
   </body>
 </html>
