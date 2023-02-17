@@ -1,0 +1,33 @@
+.cartItems {
+  background: #f2f2f2;
+  width: 100vw;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cart {
+  width: 80%;
+  height: auto;
+}
+
+#hand {
+  margin-top: 37px;
+  height: 78px;
+  width: 158px;
+}
+.cartItems h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 67px;
+  color: #0c261c;
+  margin-top: 20px;
+  margin-bottom: 33px;
+}
+
+#plant-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
