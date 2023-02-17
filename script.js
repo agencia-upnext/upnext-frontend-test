@@ -4,37 +4,10 @@ let filteredPlants = [];
 fetch("plants.json")
   .then((response) => response.json())
   .then((data) => {
-    // Itera sobre os objetos no arquivo JSON
     plantData = data;
-    data.forEach((plant) => {
-      // Extrai as propriedades desejadas
-      const imageUrl = plant.url;
-      const name = plant.name;
-      const price = plant.price;
-      const cart = document.createElement("li");
+    filteredPlants = data;
 
-      // Cria uma nova linha na tabela HTML com as informações extraídas
-      const row = document.createElement("ul");
-      const imageCell = document.createElement("img");
-      const nameCell = document.createElement("p");
-      const priceCell = document.createElement("p");
-      const valorFormatado = Intl.NumberFormat("pt-br", {
-        style: "currency",
-        currency: "BRL",
-      }).format(price);
-
-      imageCell.src = imageUrl;
-      nameCell.innerText = name;
-      priceCell.innerText = valorFormatado;
-
-      cart.appendChild(imageCell);
-      cart.appendChild(nameCell);
-      cart.appendChild(priceCell);
-      row.appendChild(cart);
-
-      row.setAttribute("class", "plant-list");
-      document.querySelector("#plantsTable tbody").appendChild(row);
-    });
+    updatePlantList();
   })
   .catch((error) => {
     console.error("Erro ao buscar o arquivo JSON:", error);
@@ -53,7 +26,7 @@ function emptyState() {
   footer.style.display = "flex";
 }
 
-function unShowEmptyState() {
+function hideEmptyState() {
   const section = document.getElementById("cart");
   const footer = document.querySelector("footer");
   section.style.display = "block";
@@ -67,7 +40,7 @@ function updatePlantList() {
     return;
   }
 
-  unShowEmptyState();
+  hideEmptyState();
 
   filteredPlants.forEach((plant) => {
     const cart = document.createElement("li");
