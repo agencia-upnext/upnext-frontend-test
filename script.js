@@ -18,10 +18,14 @@ fetch("plants.json")
       const imageCell = document.createElement("img");
       const nameCell = document.createElement("p");
       const priceCell = document.createElement("p");
+      const valorFormatado = Intl.NumberFormat("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      }).format(price);
 
       imageCell.src = imageUrl;
       nameCell.innerText = name;
-      priceCell.innerText = price;
+      priceCell.innerText = valorFormatado;
 
       cart.appendChild(imageCell);
       cart.appendChild(nameCell);
@@ -42,13 +46,37 @@ const waterSelect = document.getElementById("water");
 const petsSelect = document.getElementById("pets");
 const plantList = document.getElementById("plant-list");
 
+function emptyState() {
+  const section = document.getElementById("cart");
+  const footer = document.querySelector("footer");
+  section.style.display = "none";
+  footer.style.display = "flex";
+}
+
+function unShowEmptyState() {
+  const section = document.getElementById("cart");
+  const footer = document.querySelector("footer");
+  section.style.display = "block";
+  footer.style.display = "none";
+}
+
 function updatePlantList() {
   plantList.innerHTML = "";
+  if (filteredPlants.length === 0) {
+    emptyState();
+    return;
+  }
+
+  unShowEmptyState();
 
   filteredPlants.forEach((plant) => {
     const cart = document.createElement("li");
     const name = plant.name;
     const price = plant.price;
+    const valorFormatado = Intl.NumberFormat("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    }).format(price);
     const imageUrl = plant.url;
     const row = document.createElement("ul");
     const nameCell = document.createElement("p");
@@ -56,12 +84,12 @@ function updatePlantList() {
     const imageCell = document.createElement("img");
 
     nameCell.innerText = name;
-    priceCell.innerText = price;
+    priceCell.innerText = valorFormatado;
     imageCell.src = imageUrl;
 
+    cart.appendChild(imageCell);
     cart.appendChild(nameCell);
     cart.appendChild(priceCell);
-    cart.appendChild(imageCell);
     row.appendChild(cart);
 
     row.setAttribute("class", "plant-list");
@@ -88,12 +116,27 @@ waterSelect.addEventListener("change", () => {
 });
 
 petsSelect.addEventListener("change", () => {
-  const selectedPets = petsSelect.value;
-  const selectIsTrue = selectedPets === "true";
+  if (petsSelect.value == "") {
+    sunlightSelect.value = "";
+    waterSelect.value = "";
+    filteredPlants = [];
+    updatePlantList();
+    return;
+  }
+
+  const selectedPets = petsSelect.value == "true" ? true : false;
+
   document.querySelector("#plantsTable tbody").innerHTML = "";
-  filteredPlants = plantData.filter((plant) => {
-    return plant.toxicity !== selectIsTrue;
-  });
+  if (selectedPets == true) {
+    filteredPlants = plantData.filter((plant) => {
+      return plant.toxicity !== selectedPets;
+    });
+  } else if (selectedPets == false) {
+    filteredPlants = plantData.filter((plant) => {
+      return plant.toxicity !== selectedPets;
+    });
+  }
+
   updatePlantList();
   sunlightSelect.value = "";
   waterSelect.value = "";

@@ -4,6 +4,7 @@ li {
   height: auto;
   width: 230px;
   display: grid;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 10px;
