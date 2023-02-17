@@ -6,8 +6,8 @@
   justify-content: center;
   align-items: center;
 }
+
 #cart {
-  width: 80%;
   height: auto;
 }
 
@@ -26,8 +26,14 @@
   margin-bottom: 33px;
 }
 
-#plant-list {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+.items {
+  width: 90%;
+  min-height: 300px;
+
+  gap: 25px;
+
+  position: relative;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
