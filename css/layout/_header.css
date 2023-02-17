@@ -12,6 +12,17 @@
   object-fit: scale-down;
 }
 
+.img-left {
+  width: 45%;
+}
+.img-center {
+  width: 20%;
+}
+
+.img-right {
+  width: 35%;
+}
+
 .img-plant-mobile {
   display: none;
 }
@@ -84,7 +95,8 @@
   }
 
   #text {
-    margin-top: 87px;
+    margin-top: 44px;
+
     height: 144px;
     width: 251px;
   }
