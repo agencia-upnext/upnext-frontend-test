@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <div class="header">
+  <header class="header">
     <div class="img-header">
       <img class="img-left" src="/images/hero/desktop/left-leaves.png" alt="">
       <img class="img-center" src="/images/hero/desktop/plantperson.png" alt="">
@@ -28,11 +28,10 @@
       <img id="text" src="images/hero/desktop/text-header.png" alt="texto do header">
       <img id="arrow" src="images/icons/arrow-down.svg" alt="arrow-down">
     </div>
-  </div>
+  </header>
 
-  <div class="menu">
-
-    <div class="item-menu sun">
+  <nav class="menu">
+    <section class="item-menu sun">
       <img class="icons" src="/images/illustrations/sun.png" alt="sol com oculos escuro">
       <p><span>1.</span> Set the amount of
         <span>sunlight</span> your plant will get.
@@ -43,23 +42,22 @@
         <option value="low">Low sunlight</option>
         <option value="high">High sunlight</option>
       </select>
-    </div>
+    </section>
 
-    <div class="item-menu water">
+    <section class="item-menu water">
       <img class="icons" src="/images/illustrations/wateringcan.png" alt="regador">
       <p><span>2.</span> How often do you want to
         <span>water</span> your plant?
       </p>
-
       <select id="water">
         <option value="">Select...</option>
         <option value="regularly">Regularly</option>
         <option value="daily">Daily</option>
         <option value="rarely">Rarely</option>
       </select>
-    </div>
+    </section>
 
-    <div class="item-menu pets">
+    <section class="item-menu pets">
       <img class="icons" src="/images/illustrations/dog.png" alt="cara do cachorro">
       <p><span>3.</span>Do you have pets? Do they <span>chew</span> plants?</p>
       <select id="pets">
@@ -67,25 +65,25 @@
         <option value=true>Pet-friendly</option>
         <option value=false>Not pet-friendly</option>
       </select>
-    </div>
-  </div>
+    </section>
+  </nav>
 
-  <div class="cartItems">
-    <div id="cart">
+  <article class="cartItems">
+    <section id="cart">
       <img id="hand" src="./images/illustrations/pick.png" alt="Mão segurando uma folha">
       <h2>Our picks for you</h2>
       <table id="plantsTable">
         <tbody class="items">
         </tbody>
       </table>
-      <div class="items">
+      <section class="items">
         <ul id="plant-list">
         </ul>
-      </div>
-    </div>
-  </div>
-  <!-- 
-  <div class="footer">
+      </section>
+    </section>
+  </article>
+
+  <footer class="footer">
     <div class="footer-text">
       <h2>No results yet…</h2>
       <div class="text">
@@ -95,7 +93,7 @@
     <div class="footer-img">
       <img src="/images/illustrations/no-results.png" alt="">
     </div>
-  </div> -->
+  </footer>
 
 </body>
 

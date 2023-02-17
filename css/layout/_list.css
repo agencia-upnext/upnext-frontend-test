@@ -32,10 +32,9 @@
   width: 90%;
   min-height: 300px;
   gap: 25px;
-  position: relative;
-  justify-content: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  place-items: center;
 }
 
 @media screen and (max-width: 1000px) {
