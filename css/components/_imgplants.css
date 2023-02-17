@@ -2,3 +2,10 @@ li img {
   width: 107px;
   height: 161px;
 }
+
+@media screen and (max-width: 1000px) {
+  li img {
+    height: 237px;
+    width: 158px;
+  }
+}

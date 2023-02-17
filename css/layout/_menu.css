@@ -1,10 +1,11 @@
 .menu {
   display: flex;
   background: #ffffff;
-  max-height: 300px;
-  width: auto;
+  height: auto;
+
   margin-left: 293px;
   gap: 100px;
+  margin-bottom: 53px;
 }
 
 .icons {
@@ -46,4 +47,16 @@ select {
   padding-left: 18px;
   margin-bottom: 53px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .menu {
+    display: grid;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 0;
+    gap: 0;
+  }
 }
