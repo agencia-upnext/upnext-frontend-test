@@ -3,7 +3,8 @@
   background: #ffffff;
   height: auto;
 
-  margin-left: 293px;
+  justify-content: center;
+  align-items: center;
   gap: 100px;
   margin-bottom: 53px;
 }
