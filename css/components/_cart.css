@@ -1,0 +1,20 @@
+li {
+  background: #ffffff;
+  border-radius: 5px;
+  height: auto;
+  width: 230px;
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+li p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+  color: #1e6b4e;
+  margin-bottom: 0;
+}
