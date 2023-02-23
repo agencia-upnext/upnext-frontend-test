@@ -75,10 +75,12 @@ section#home {
   background-position: center;
   background-color: #75BC97;
   height: 60vh;
+  min-height: 550px;
 }
 
-section#fields {
-  min-height: 40vh;
+section#fields, section#fields .container {
+  height: 40vh;
+  min-height: 380px;
 }
 
 h1 {
@@ -94,7 +96,6 @@ h1 {
 
 section#fields .container {
   gap: 25px;
-  min-height: 40vh;
 }
 
 .item {

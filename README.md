@@ -8,9 +8,9 @@ O HTML e CSS deixei o mais clean possível, usei HTML semântico e no CSS precis
 
 ## JS
 
-Criei um diretório chamado `api`, lá contém nosso arquivo `.json` que eu consumo para simular como se os dados realmente estivessem vindo de uma API.
-Na página de `controller` eu tenho uma classe que é a responsável por consumir, filtrar e tratar os dados da nossa 'api' e enviar para o nosso script principal os dados já prontos para serem usados.
+Nosso `script` principal é dividido em duas classes:
 
-No nosso `script` principal eu resolvo as questões como renderizar o conteúdo vindo da API e DOM.
+- `PlantsDataController`: Classe responsável por tudo que diz respeito aos dados da nossa lista de plantas!
+- `AppController`: Classe responsável por toda nossa manipulação do documento!
 
-Foi um teste bem legal de se fazer, e acredito que consegui mostrar um pouco das minhas habilidades com essas tecnologias.
+Lembrando que o mais recomendado seria criar essas classes em arquivos separados para nosso arquivo não ficar muito grande e verboso.
